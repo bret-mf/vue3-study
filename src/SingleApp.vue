@@ -14,6 +14,7 @@
     title="children title"
     @click="childrenClick"
   />
+  <emit-comp @click="emitClick" />
 </template>
 
 <script lang="ts" setup>
@@ -28,6 +29,7 @@ import InjectComp from "@/components/inject-comp.vue";
 import DirectiveComp from "@/components/directive-comp.vue";
 import BindcssComp from "@/components/bindcss-comp.vue";
 import ChildrenComp from "@/components/children-comp.vue";
+import EmitComp from "@/components/emit-comp.vue";
 import { fooSymbol } from "@/utils/injectSymbolKey";
 
 const suffix = "_provide";
@@ -52,6 +54,10 @@ onMounted(() => {
 
 const childrenClick = (t: string) => {
   console.log("childrenClick", t);
+};
+
+const emitClick = (text: string) => {
+  console.log("parent:click", text);
 };
 </script>
 

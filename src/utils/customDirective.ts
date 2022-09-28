@@ -1,5 +1,7 @@
+import { DirectiveBinding } from "vue";
+
 export const myDirective = {
-  beforeMount: (el: HTMLElement, binding: any) => {
+  beforeMount: (el: HTMLElement, binding: DirectiveBinding) => {
     console.log("我是自定义指令，在beforeMount执行了", el);
     /**
      * el: 指令绑定的元素
